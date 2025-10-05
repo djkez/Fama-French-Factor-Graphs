@@ -11,3 +11,15 @@ https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
 Important: when preparing the merged dataset, ensure you do not tick 'In percent' when downloading the CSVs from French’s website, otherwise the program will misread the inputs.
 
 A standalone Windows .exe is provided under Releases so the tool can be run without a Python installation.
+
+# Download the latest Windows executable from the **Releases** tab.
+
+## Run without Python
+1. Go to **Releases** (right side of the repo page).
+2. Download the `.zip` file.
+3. Unzip and double-click `Factor Graphs.exe`.
+
+## Run with Python instead (developers)
+```bash
+pip install -r Libraries Required.txt
+python "Factor Graphs.py"
