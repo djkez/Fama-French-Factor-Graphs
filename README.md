@@ -24,7 +24,7 @@ Do not tick ‘In percent’. Leave returns in decimal form.
 
 Unzip the downloads so you have two .csv files.
 
-Quick start (no arguments)
+# Quick start (no arguments)
 
 Double-click Merge_FF_Momentum.py (or run it with Python).
 You’ll be prompted to pick:
