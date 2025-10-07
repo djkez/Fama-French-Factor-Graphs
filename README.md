@@ -20,10 +20,6 @@ Download ‘F-F_Research_Data_5_Factors_2x3’ (Monthly) — CSV version.
 
 Download ‘F-F_Momentum_Factor’ (Monthly) — CSV version.
 
-**Do not tick ‘In percent’. Leave returns in decimal form.**
-
-Unzip the downloads so you have two .csv files.
-
 # Quick start option (no PowerShell)
 
 Double-click Merge_FF_Momentum.py (or run it with Python).
@@ -103,7 +99,9 @@ Date, Mkt-RF, SMB, HML, RMW, CMA, Mom, RF
 
 (Date formatted as YYYY-MM.)
 
-Using the merged file in the app
+# Using the merged file in the app
+
+**Do not tick ‘In percent’. Leave returns in decimal form.**
 
 In Factor Graphs, load Merged.FF.Factors.Plus.Momentum.csv when you want momentum included.
 **If charts look wrong, recheck that the inputs were downloaded without ‘In percent’.**
