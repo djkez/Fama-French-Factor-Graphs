@@ -20,20 +20,6 @@ Download ‘F-F_Research_Data_5_Factors_2x3’ (Monthly) — CSV version.
 
 Download ‘F-F_Momentum_Factor’ (Monthly) — CSV version.
 
-# Quick start option (no PowerShell)
-
-Double-click Merge_FF_Momentum.py (or run it with Python).
-You’ll be prompted to pick:
-
-the 5-Factors 2×3 CSV, then
-
-the Momentum CSV,
-and the script will write a merged file named:
-
-Merged.FF.Factors.Plus.Momentum.csv
-
-in the current folder (or ./data/ if that folder exists).
-
 # Command-line usage (PowerShell)
 **1. Open PowerShell**
 
