@@ -51,7 +51,7 @@ python merge_ff_momentum.py → runs the script
 
 -o merged_ff_5f_plus_mom.csv → output filename (you can rename it if you want)
 
-**4. If you get an Excel pop-up**
+**4. If you get an Excel pop-up when inspecting the new merged file**
 
 That popup is just Excel being Excel 😅 — it’s warning you that when it opens a CSV, it might automatically show large numbers (like dates written as 202307) in scientific notation (e.g., 2.02307E+05).
 
@@ -61,7 +61,7 @@ For your merged factor file, you should click Don’t Convert.
 
 The script already cleaned your dates into a proper YYYY-MM-DD format, so there shouldn’t be any big integer values left.
 
-If you click Convert, Excel will still try to “help” by auto-formatting columns, which can sometimes mess things up.
+If you click Convert, Excel will still try to 'help' by auto-formatting columns, which can sometimes mess things up.
 
 If you click Don’t Convert, Excel will show the raw values exactly as written in the CSV (no unwanted conversions).
 
