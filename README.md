@@ -38,8 +38,8 @@ Merged.FF.Factors.Plus.Momentum.csv
 
 in the current folder (or ./data/ if that folder exists).
 
-Command-line usage (PowerShell)
-# From the repo root (adjust paths if needed)
+# Command-line usage (PowerShell)
+From the repo root (adjust paths if needed)
 python ".\Merge_FF_Momentum.py" `
   --ff_csv ".\data\F-F_Research_Data_5_Factors_2x3.csv" `
   --mom_csv ".\data\F-F_Momentum_Factor.csv" `
