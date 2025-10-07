@@ -39,19 +39,55 @@ Merged.FF.Factors.Plus.Momentum.csv
 in the current folder (or ./data/ if that folder exists).
 
 # Command-line usage (PowerShell)
-From the repo root (adjust paths if needed)
-python ".\Merge_FF_Momentum.py" `
-  --ff_csv ".\data\F-F_Research_Data_5_Factors_2x3.csv" `
-  --mom_csv ".\data\F-F_Momentum_Factor.csv" `
-  --out ".\data\Merged.FF.Factors.Plus.Momentum.csv"
+**1. Open PowerShell**
 
-Arguments
+Press Start → type PowerShell → hit Enter.
 
---ff_csv Path to the F-F_Research_Data_5_Factors_2x3 CSV (monthly, decimals)
+You should see a black/blue PowerShell window.
 
---mom_csv Path to the F-F_Momentum_Factor CSV (monthly, decimals)
+**2. Go to the folder where the script is saved**
 
---out Output path for the merged CSV (optional; defaults to Merged.FF.Factors.Plus.Momentum.csv)
+If you saved it into your Documents\Python Programs folder (where your GUI is), type:
+
+cd "C:\Users\Kiera\Documents\Python Programs"
+
+(Replace the path with wherever merge_ff_momentum.py actually is.)
+
+**3. Run the script with your two CSV files**
+
+Example command:
+
+python merge_ff_momentum.py "F-F_Research_Data_5_Factors_2x3.csv" "F-F_Momentum_Factor.csv" -o merged_ff_5f_plus_mom.csv
+
+Explanation:
+
+python merge_ff_momentum.py → runs the script
+
+"F-F_Research_Data_5_Factors_2x3.csv" → your 5-factor file
+
+"F-F_Momentum_Factor.csv" → the momentum factor file
+
+-o merged_ff_5f_plus_mom.csv → output filename (you can rename it if you want)
+
+4. If you get an Excel pop-up
+
+That popup is just Excel being Excel 😅 — it’s warning you that when it opens a CSV, it might automatically show large numbers (like dates written as 202307) in scientific notation (e.g., 2.02307E+05).
+
+For your merged factor file, you should click Don’t Convert.
+
+Here’s why:
+
+The script already cleaned your dates into a proper YYYY-MM-DD format, so there shouldn’t be any big integer values left.
+
+If you click Convert, Excel will still try to “help” by auto-formatting columns, which can sometimes mess things up.
+
+If you click Don’t Convert, Excel will show the raw values exactly as written in the CSV (no unwanted conversions).
+
+And importantly:
+
+This popup only affects how Excel displays the CSV, not how Python or your GUI reads it.
+
+So even if you accidentally click Convert, your GUI will still read the file fine — it doesn’t use Excel.
 
 **What the script does**
 
