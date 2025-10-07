@@ -65,7 +65,7 @@ If you click Convert, Excel will still try to “help” by auto-formatting colu
 
 If you click Don’t Convert, Excel will show the raw values exactly as written in the CSV (no unwanted conversions).
 
-And importantly:
+**And importantly:**
 
 This popup only affects how Excel displays the CSV, not how Python or your GUI reads it.
 
