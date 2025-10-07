@@ -98,8 +98,8 @@ A standalone Windows .exe is provided under Releases so the tool can be run with
 
 ## Run without Python
 1. Go to **Releases** (right side of the repo page).
-2. Download the `.zip` file.
-3. Unzip and double-click `Factor Graphs.exe`.
+2. Download the `Factor.Graphs.exe` file.
+3. Double-click `Factor Graphs.exe`.
 
 ## Run with Python instead (developers)
 ```bash
