@@ -2,7 +2,7 @@
 
 Fama–French Factor Graphs is a Python-based analytical tool for visualising factor model regressions using the Fama–French framework.
 
-The program enables users to plot and compare exposures to the standard Fama–French 2×3 factors (Market, SMB, HML, RMW, CMA) alongside the momentum factor, producing publication-quality graphs for research or reporting.
+The program enables users to plot and compare exposures to the standard Fama–French 2×3 factors (Market, SMB, HML, RMW, CMA) alongside the momentum factor, producing quality graphs for research or reporting.
 
 The repository also includes a merging utility that combines the Fama–French 2×3 factor dataset with the Momentum data files (both downloadable from Kenneth French’s Data Library). This merged version allows for six-factor analysis within the same time window.
 
