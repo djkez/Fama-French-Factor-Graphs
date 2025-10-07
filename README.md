@@ -67,9 +67,9 @@ If you click Don’t Convert, Excel will show the raw values exactly as written 
 
 **And importantly:**
 
-This popup only affects how Excel displays the CSV, not how Python or your GUI reads it.
+This popup only affects how Excel displays the CSV, not how Python or the GUI reads it.
 
-So even if you accidentally click Convert, your GUI will still read the file fine — it doesn’t use Excel.
+So even if you accidentally click Convert, no problem. The GUI will still read the file fine — it doesn’t use Excel.
 
 **What the script does**
 
