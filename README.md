@@ -53,7 +53,7 @@ Arguments
 
 --out Output path for the merged CSV (optional; defaults to Merged.FF.Factors.Plus.Momentum.csv)
 
-What the script does
+**What the script does**
 
 Parses and cleans French’s headers/footers.
 
@@ -61,7 +61,7 @@ Harmonises dates to monthly and takes the intersection of available months.
 
 Normalises column names and keeps returns in decimal units.
 
-Outputs columns similar to:
+**Outputs columns similar to:**
 
 Date, Mkt-RF, SMB, HML, RMW, CMA, Mom, RF
 
