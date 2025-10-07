@@ -7,12 +7,12 @@ The program enables users to plot and compare exposures to the standard Fama–F
 The repository also includes a merging utility that combines the Fama–French 2×3 factor dataset with the Momentum data files (both downloadable from Kenneth French’s Data Library). This merged version allows for six-factor analysis within the same time window.
 
 # Important! 
-You will need to download Fama/French 5 Factors (2x3) and Momentum Factor (Mom) from Ken French's website.
+You will need to download Fama/French 5 Factors (2x3) and Momentum Factor (Mom) from Ken French's website and merge the two files.
 https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
 
-Merge the Fama–French 2×3 factors with Momentum
+# Merging
 
-# This repo includes a small utility, Merge_FF_Momentum.py, that combines the monthly Fama–French 2×3 factor file with the Momentum file from Kenneth French’s Data Library so you can run six-factor analysis on aligned dates.
+This repo includes a small utility, Merge_FF_Momentum.py, that combines the monthly Fama–French 2×3 factor file with the Momentum file from Kenneth French’s Data Library so you can run six-factor analysis on aligned dates.
 
 Get the two input files (monthly)
 
@@ -20,11 +20,11 @@ Download ‘F-F_Research_Data_5_Factors_2x3’ (Monthly) — CSV version.
 
 Download ‘F-F_Momentum_Factor’ (Monthly) — CSV version.
 
-Do not tick ‘In percent’. Leave returns in decimal form.
+**Do not tick ‘In percent’. Leave returns in decimal form.**
 
 Unzip the downloads so you have two .csv files.
 
-# Quick start (no arguments)
+# Quick start option (no PowerShell)
 
 Double-click Merge_FF_Momentum.py (or run it with Python).
 You’ll be prompted to pick:
@@ -47,11 +47,11 @@ You should see a black/blue PowerShell window.
 
 **2. Go to the folder where the script is saved**
 
-If you saved it into your Documents\Python Programs folder (where your GUI is), type:
+If you saved it into your Documents\Python Programs folder, type:
 
 cd "C:\Users\Kiera\Documents\Python Programs"
 
-(Replace the path with wherever merge_ff_momentum.py actually is.)
+(Replace the path with wherever merge_ff_momentum.py actually is for you.)
 
 **3. Run the script with your two CSV files**
 
@@ -69,13 +69,13 @@ python merge_ff_momentum.py → runs the script
 
 -o merged_ff_5f_plus_mom.csv → output filename (you can rename it if you want)
 
-4. If you get an Excel pop-up
+**4. If you get an Excel pop-up**
 
 That popup is just Excel being Excel 😅 — it’s warning you that when it opens a CSV, it might automatically show large numbers (like dates written as 202307) in scientific notation (e.g., 2.02307E+05).
 
 For your merged factor file, you should click Don’t Convert.
 
-Here’s why:
+**Here’s why:**
 
 The script already cleaned your dates into a proper YYYY-MM-DD format, so there shouldn’t be any big integer values left.
 
