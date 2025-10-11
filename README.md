@@ -87,7 +87,11 @@ Date, Mkt-RF, SMB, HML, RMW, CMA, Mom, RF
 
 (Date formatted as YYYY-MM.)
 
-# Using the merged file in the app
+# Using the unmerged CSV file in the app
+
+Leave 'In percent' ticked. This will be ticked by default.
+
+# Using the merged CSV file in the app
 
 **Do not tick ‘In percent’. Leave returns in decimal form.**
 
