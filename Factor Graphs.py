@@ -43,6 +43,15 @@ plt.rcParams.update({
     "legend.edgecolor": "none",
 })
 
+
+def _legend_if_any(ax, **kwargs):
+    """Safely add a legend only if labels exist."""
+    handles, labels = ax.get_legend_handles_labels()
+    if labels:
+        ax.legend(**kwargs)
+
+
+
 def read_fama_french_csv(path: str) -> pd.DataFrame:
     import re
     with open(path, "r", encoding="utf-8", errors="ignore") as f:
@@ -108,7 +117,7 @@ def coerce_dates(df: pd.DataFrame, date_col: str) -> pd.DataFrame:
     if raw.str.fullmatch(r"\d{6}").all():
         df[date_col] = pd.to_datetime(raw.str[:4] + "-" + raw.str[4:] + "-01", errors="raise")
     else:
-        df[date_col] = pd.to_datetime(df[date_col], errors="coerce")
+        df[date_col] = pd.to_datetime(df[date_col], errors="coerce", dayfirst=True)
     df = df.dropna(subset=[date_col]).sort_values(date_col).reset_index(drop=True)
     return df
 
@@ -128,7 +137,7 @@ def to_real_series(nominal: pd.Series, cpi: pd.Series) -> pd.Series:
 
 def monthly_to_annual(df: pd.DataFrame) -> pd.DataFrame:
     compound = lambda x: (1.0 + x).prod() - 1.0
-    annual = df.resample("Y").apply(compound)
+    annual = df.resample("YE").apply(compound)
     annual.index = annual.index.year
     return annual
 
@@ -181,7 +190,7 @@ def chart_annual(annual: pd.DataFrame, out: str, dpi: int, svg: bool, title: str
     mean_val = annual[col].mean()
     ax.axhline(mean_val, linestyle="--", linewidth=1, alpha=0.7, color=HOUSE_GREY,
                label=f"Average: {mean_val*100:.1f}%")
-    set_percent_axis(ax); ax.legend(loc="upper left")
+    set_percent_axis(ax); _legend_if_any(ax, loc="upper left")
     ax.set_xlabel("Year"); ax.set_ylabel("Annual return")
     ax.set_title(f"Annual Returns — {title}", loc="center")
     fig.tight_layout(); fig.savefig(out, dpi=dpi, bbox_inches="tight")
@@ -196,7 +205,7 @@ def chart_cum_currency(cum: pd.DataFrame, out: str, dpi: int, svg: bool, title: 
     set_value_axis_currency(ax, currency)
     ax.set_xlabel("Date"); ax.set_ylabel(f"Value of 1 ({currency})")
     ax.set_title(f"Long-Term Returns (Cumulative) — {title}", loc="center")
-    ax.legend(ncol=min(4,len(cum.columns)))
+    _legend_if_any(ax, ncol=min(4,len(cum.columns)))
     fig.tight_layout(); fig.savefig(out, dpi=dpi, bbox_inches="tight")
     if svg: fig.savefig(out.replace(".png",".svg"), bbox_inches="tight")
     plt.close(fig)
@@ -219,7 +228,7 @@ def chart_contrib(monthly: pd.DataFrame, start: float, contrib: float, out: str,
         mv = simulate_contributions(monthly[col].dropna(), start, contrib)
         ax.plot(mv.index, mv.values, linewidth=1.6)
     set_value_axis_currency(ax, currency)
-    ax.legend(ncol=min(4,len(monthly.columns)))
+    _legend_if_any(ax, ncol=min(4,len(monthly.columns)))
     ax.set_xlabel("Date"); ax.set_ylabel(f"Portfolio value ({currency})")
     ax.set_title(f"Contributions Simulation — {title}", loc="center")
     fig.tight_layout(); fig.savefig(out, dpi=dpi, bbox_inches="tight")
@@ -232,7 +241,7 @@ def chart_withdraw(monthly: pd.DataFrame, start: float, pct: float, mode: str, o
         mv = simulate_withdrawals(monthly[col].dropna(), start, pct, mode)
         ax.plot(mv.index, mv.values, linewidth=1.6)
     set_value_axis_currency(ax, currency)
-    ax.legend(ncol=min(4,len(monthly.columns)))
+    _legend_if_any(ax, ncol=min(4,len(monthly.columns)))
     ax.set_xlabel("Date"); ax.set_ylabel(f"Portfolio value ({currency})")
     wtitle = f"{pct*100:.1f}% {mode}"
     ax.set_title(f"Withdrawals Simulation ({wtitle}) — {title}", loc="center")
@@ -323,7 +332,7 @@ def export_excel(path: str, monthly: pd.DataFrame, annual: pd.DataFrame, cum: pd
 class App(tk.Tk):
     def __init__(self):
         super().__init__()
-        self.title("FactorGraphs GUI — House Grey (Fix 6)")
+        self.title("FactorGraphs GUI")
         self.geometry("1100x820")
         self.file_path=tk.StringVar(); self.sheet=tk.StringVar()
         self.is_percent=tk.BooleanVar(value=True); self.rf_col=tk.StringVar()
