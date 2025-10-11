@@ -1,11 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-factorgraphs_gui_housegrey_fix6.py
-- Cumulative chart: non-log, labeled "Value of 1 (<currency>)"
-- Currency-formatted y-axis with common symbols
-- Keeps all other features (percent axes, commas on value charts elsewhere, heatmap ticks, etc.)
-"""
+
 from __future__ import annotations
 
 import os, re
