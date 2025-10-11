@@ -6,6 +6,8 @@ The program enables users to plot and compare exposures to the standard Fama–F
 
 The repository also includes a merging utility that combines the Fama–French 2×3 factor dataset with the Momentum data files (both downloadable from Kenneth French’s Data Library). This merged version allows for six-factor analysis within the same time window.
 
+You can also use the Emerging Markets (EM) versions of the Fama-French factors. To do this, download the Emerging Markets 5 Factors (2x3) and Emerging Markets Momentum Factor (Mom) datasets from Ken French’s Data Library, extract the monthly CSVs, and merge them using the same Python merge script. This allows the program to analyse both developed and emerging factor sets within a single workflow.
+
 # Important! 
 You will need to download Fama/French 5 Factors (2x3) and Momentum Factor (Mom) from Ken French's website and merge the two files.
 https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
