@@ -83,7 +83,7 @@ Normalises column names and keeps returns in decimal units.
 
 **Outputs columns similar to:**
 
-Date, Mkt-RF, SMB, HML, RMW, CMA, Mom, RF
+Date, Mkt-RF, SMB, HML, RMW, CMA, MOM, RF
 
 (Date formatted as YYYY-MM.)
 
