@@ -91,7 +91,7 @@ Date, Mkt-RF, SMB, HML, RMW, CMA, MOM, RF
 
 Leave 'In percent' ticked. This will be ticked by default.
 
-The merged EM file has to have the data cleaned (multiplied by 100) initially and thus 'in percent' should be ticked.
+The merged EM file has to have the data cleaned (multiplied by 100) initially and thus 'In percent' should be ticked.
 
 # Using the merged (six-factor) developed CSV file in the app
 
