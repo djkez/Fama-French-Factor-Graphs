@@ -87,11 +87,13 @@ Date, Mkt-RF, SMB, HML, RMW, CMA, MOM, RF
 
 (Date formatted as YYYY-MM.)
 
-# Using the unmerged CSV file in the app
+# Using the unmerged (five-factor) developed and EM CSVs & the merged EM (six-factor) CSV file in the app
 
 Leave 'In percent' ticked. This will be ticked by default.
 
-# Using the merged CSV file in the app
+The merged EM file has to have the data cleaned (multiplied by 100) initially and thus 'in percent' should be ticked.
+
+# Using the merged (six-factor) developed CSV file in the app
 
 **Do not tick ‘In percent’. Leave returns in decimal form.**
 
