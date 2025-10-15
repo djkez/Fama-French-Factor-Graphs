@@ -100,9 +100,9 @@ The merged EM file has to have the data cleaned (multiplied by 100) initially an
 In Factor Graphs, load Merged.FF.Factors.Plus.Momentum.csv when you want momentum included.
 **If charts look wrong, recheck that the inputs were downloaded without ‘In percent’.**
 
-A standalone Windows .exe is provided under Releases so the tool can be run without a Python installation.
-
 # Download the latest Windows executable from the **Releases** tab.
+
+A standalone Windows .exe is provided under Releases so the tool can be run without a Python installation.
 
 ## Run without Python
 1. Go to **Releases** (right side of the repo page).
